@@ -1,0 +1,235 @@
+if (((deg0 >= 0.150) and (deg0 <= 8.000)) and ((deg90 >= 0.240) and (deg90 <= 8.000)) and ((deg270 >= 0.240) and (deg270 <= 8.000))):
+    if (deg0 <= 0.250):
+        if ((deg90+deg270)>=2.500):
+	if ((deg78 > 1.200) or (deg282 > 1.200)): #case1
+	    if (deg90 > deg 270):
+	        if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 <= 0.350)) or ((deg45 >= 0.350) and (deg315 <= 0.350))):
+		while True:
+		    if (deg315 <= 0.350):
+		        send_value = "left"
+		    else:
+		        break
+	    elif (deg90 < deg 270):
+	        if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 <= 0.350)) or ((deg45 <= 0.350) and (deg315 >= 0.350))):
+	            while True:
+		    if (deg45 <= 0.350):
+		        send_value = "right"
+		    else:
+		        break
+	elif ((deg78 <= 1.200) and (deg282 <= 1.200)):
+	    if (deg90 > deg 270):
+	        if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 >= 0.350) and (deg315 <= 0.350))):
+		send_value = "left"
+	        elif ((deg45 <= 0.350) and (deg315 <= 0.350)):
+		send_value = "turn_around"
+	    elif (deg90 < deg 270):
+	        if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 >= 0.350))):
+	            send_value = "right"
+                     elif ((deg45 <= 0.350) and (deg315 <= 0.350)):
+		send_value = "turn_around"
+        elif ((deg90+deg270)<2.500):
+
+    elif (deg0 > 0.250):
+        if ((deg90+deg270)>=2.500):
+            if ((deg45 > 0.350) and (deg315 > 0.350)):
+                send_value = "front"
+            elif ((deg45 > 0.350) and (deg315 <= 0.350)):
+                send_value = "left"
+            elif ((deg45 <= 0.350) and (deg315 > 0.350)):
+                send_value = "right"
+        elif ((deg90+deg270)<2.500):
+            if ((deg45 > 0.350) and (deg315 > 0.350)):
+                if ((deg78 > 0.306) and (deg 282 > 0.306)):
+                    send_value = "front"
+                elif ((deg78 > 0.306) and (deg282 <= 0.306)):
+                    send_vlaue = "left"
+                elif ((deg78 <= 0.306) and (deg282 > 0.306)):
+                    send_vlaue = "right"
+            elif ((deg45 > 0.350) and (deg315 <= 0.350)):
+                send_value = "turn_left"
+            elif ((deg45 <= 0.350) and (deg315 > 0.350)):
+                send_value = "turn_right"
+
+----------------------------------------------
+    if msg.ranges[45] <= 8.000:
+        deg45=msg.ranges[45]
+        #print("^_________________________________^")
+    elif msg.ranges[45] >= 8.000 and msg.ranges[46] <= 8.000:
+        deg45=msg.ranges[46]
+        #print("^_________________________________^")
+    elif msg.ranges[45] >= 8.000 and msg.ranges[46] >= 8.000 and msg.ranges[44] <= 8.000:
+        deg45=msg.ranges[44]
+        #print("^_________________________________^")
+    else:
+        print("deg 45 lost")
+
+    if msg.ranges[78] <= 8.000:
+        deg78=msg.ranges[78]
+        #print("^_________________________________^")
+    elif msg.ranges[78] >= 8.000 and msg.ranges[77] <= 8.000:
+        deg78=msg.ranges[77]
+        #print("^_________________________________^")
+    elif msg.ranges[78] >= 8.000 and msg.ranges[77] >= 8.000 and msg.ranges[79] <= 8.000:
+        deg78=msg.ranges[79]
+        #print("^_________________________________^")
+    else:
+        print("deg 78 lost")
+
+    if msg.ranges[90] <= 8.000:
+        deg90=msg.ranges[90]
+        #print("^_________________________________^")
+    elif msg.ranges[90] >= 8.000 and msg.ranges[89] <= 8.000:
+        deg90=msg.ranges[89]
+        #print("^_________________________________^")
+    elif msg.ranges[90] >= 8.000 and msg.ranges[89] >= 8.000 and msg.ranges[91] <= 8.000:
+        deg90=msg.ranges[91]
+        #print("^_________________________________^")
+    else:
+        print("deg 90 lost")
+
+    if msg.ranges[137] <= 8.000:
+        deg137=msg.ranges[137]
+        #print("^_________________________________^")
+    elif msg.ranges[137] >= 8.000 and msg.ranges[136] <= 8.000:
+        deg137=msg.ranges[136]
+        #print("^_________________________________^")
+    elif msg.ranges[137] >= 8.000 and msg.ranges[136] >= 8.000 and msg.ranges[138] <= 8.000:
+        deg137=msg.ranges[138]
+        #print("^_________________________________^")
+    else:
+        print("deg 137 lost")
+
+    if msg.ranges[223] <= 8.000:
+        deg223=msg.ranges[223]
+        #print("^_________________________________^")
+    elif msg.ranges[223] >= 8.000 and msg.ranges[224] <= 8.000:
+        deg223=msg.ranges[224]
+        #print("^_________________________________^")
+    elif msg.ranges[223] >= 8.000 and msg.ranges[224] >= 8.000 and msg.ranges[222] <= 8.000:
+        deg223=msg.ranges[222]
+        #print("^_________________________________^")
+    else:
+        print("deg 223 lost")
+
+    if msg.ranges[270] <= 8.000:
+        deg270=msg.ranges[270]
+        #print("^_________________________________^")
+    elif msg.ranges[270] >= 8.000 and msg.ranges[271] <= 8.000:
+        deg270=msg.ranges[271]
+        #print("^_________________________________^")
+    elif msg.ranges[270] >= 8.000 and msg.ranges[271] >= 8.000 and msg.ranges[269] <= 8.000:
+        deg270=msg.ranges[269]
+        #print("^_________________________________^")
+    else:
+        print("deg 270 lost")
+
+    if msg.ranges[282] <= 8.000:
+        deg282=msg.ranges[282]
+        #print("^_________________________________^")
+    elif msg.ranges[282] >= 8.000 and msg.ranges[283] <= 8.000:
+        deg282=msg.ranges[283]
+        #print("^_________________________________^")
+    elif msg.ranges[282] >= 8.000 and msg.ranges[283] >= 8.000 and msg.ranges[281] <= 8.000:
+        deg282=msg.ranges[281]
+        #print("^_________________________________^")
+    else:
+        print("deg 282 lost")
+        #print("^_________________________________^")
+
+    if msg.ranges[315] <= 8.000:
+        deg315=msg.ranges[315]
+        print("^_________________________________^")
+    elif msg.ranges[315] >= 8.000 and msg.ranges[316] <= 8.000:
+        deg315=msg.ranges[316]
+        print("^_________________________________^")
+    elif msg.ranges[315] >= 8.000 and msg.ranges[316] >= 8.000 and msg.ranges[314] <= 8.000:
+        deg315=msg.ranges[314]
+        print("^_________________________________^")
+    else:
+        print("deg 315 lost")
+        print("^_________________________________^")
+
+
+-------------------------------------------------------------------------------------------
+    if (((deg0 >= 0.150) and (deg0 <= 8.000)) and ((deg90 >= 0.240) and (deg90 <= 8.000)) and ((deg270 >= 0.240) and (deg270 <= 8.000))):
+        if (deg0 <= 0.250):
+            if ((deg90+deg270)>=2.500):
+                if ((deg78 > 1.200) or (deg282 > 1.200)): #case1
+                    if (deg90 > deg270):
+                        if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 <= 0.350)) or ((deg45 >= 0.350) and (deg315 <= 0.350))):
+		            while True:
+		                if (deg315 <= 0.350):
+		                    send_value = "left"
+		                else:
+		                    break
+      	            elif (deg90 < deg270):
+	                if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 <= 0.350)) or ((deg45 <= 0.350) and (deg315 >= 0.350))):
+	                    while True:
+		                if (deg45 <= 0.350):
+		                    send_value = "right"
+		                else:
+		                    break
+	        elif ((deg78 <= 1.200) and (deg282 <= 1.200)):
+	            if (deg90 > deg270):
+	                if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 >= 0.350) and (deg315 <= 0.350))):
+		            send_value = "left"
+	                elif ((deg45 <= 0.350) and (deg315 <= 0.350)):
+		            send_value = "turn_around"
+	            elif (deg90 < deg270):
+	                if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 >= 0.350))):
+	                    send_value = "right"
+                        elif ((deg45 <= 0.350) and (deg315 <= 0.350)):
+		            send_value = "turn_around"
+            elif ((deg90+deg270)<2.500):
+                if ((deg78 > 1.200) or (deg282 > 1.200)): #case1
+                    if (deg90 > deg270):
+                        if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 <= 0.350)) or ((deg45 >= 0.350) and (deg315 <= 0.350))):
+		            while True:
+		                if (deg315 <= 0.350):
+		                    send_value = "left"
+		                else:
+		                    break
+      	            elif (deg90 < deg270):
+	                if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 <= 0.350)) or ((deg45 <= 0.350) and (deg315 >= 0.350))):
+	                    while True:
+		                if (deg45 <= 0.350):
+		                    send_value = "right"
+		                else:
+		                    break
+	        elif ((deg78 <= 1.200) and (deg282 <= 1.200)):
+	            if (deg90 > deg270):
+	                if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 >= 0.350) and (deg315 <= 0.350))):
+		            send_value = "left"
+	                elif ((deg45 <= 0.350) and (deg315 <= 0.350)):
+		            send_value = "turn_around"
+	            elif (deg90 < deg270):
+	                if (((deg45 >= 0.350) and (deg315 >= 0.350)) or ((deg45 <= 0.350) and (deg315 >= 0.350))):
+	                    send_value = "right"
+                        elif ((deg45 <= 0.350) and (deg315 <= 0.350)):
+		            send_value = "turn_around"
+        elif (deg0 > 0.250):
+            if ((deg90+deg270)>=2.500):
+                if ((deg45 > 0.350) and (deg315 > 0.350)):
+                    send_value = "front"
+                elif ((deg45 > 0.350) and (deg315 <= 0.350)):
+                    send_value = "left"
+                elif ((deg45 <= 0.350) and (deg315 > 0.350)):
+                    send_value = "right"
+            elif ((deg90+deg270)<2.500):
+                if ((deg45 > 0.350) and (deg315 > 0.350)):
+                    if ((deg78 > 0.306) and (deg282 > 0.306)):
+                        send_value = "front"
+                    elif ((deg78 > 0.306) and (deg282 <= 0.306)):
+                        send_vlaue = "left"
+                    elif ((deg78 <= 0.306) and (deg282 > 0.306)):
+                        send_vlaue = "right"
+                elif ((deg45 > 0.350) and (deg315 <= 0.350)):
+                    send_value = "turn_left"
+                elif ((deg45 <= 0.350) and (deg315 > 0.350)):
+                    send_value = "turn_right"
+
+-------------------------------------------------------------------------------------------
+
+
+
+QR 인식 후

@@ -1,0 +1,8 @@
+prefix=/home/capstone/opencv/install
+
+Name: gbot_core
+Description: Description of gbot_core
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib -lgbot_core
+Requires: roscpp

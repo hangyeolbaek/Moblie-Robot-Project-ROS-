@@ -1,0 +1,73 @@
+source tree
+  ros workspace : ~/opencv
+    opencv/
+    |-build/
+    |-devel/
+    |-src/
+       |-rplidar/
+       |-laser_test/
+       |-hector_slam/
+       |-pub_value/
+          |-CMakeLists.txt
+          |-package.xml
+          |-include/
+          |-src/
+             |-value_test.py
+             |-pub_value.py
+       |-rosserial/
+       |-marker.py
+
+  lidar slam without ros workspace : ~/workspaces
+    workspaces/
+    |- BreezySLAM/ #Lidar-based SLAM without ROS library
+    |- PyRoboViz/ #SLAM mapping log play video library
+    |- rplidar/ #run rplidar without ROS library
+
+rostopic list
+  /driving
+  /package
+
+running rplidar with ROS command
+  -> roslaunch rplidar_ros rplidar.launch #running rplidar
+running rplidar with rviz visualization
+  -> roslaunch rplidar_ros view_rplidar.launch
+running hector slam
+  -> roslaunch hector_slam_launch tutorial.launch
+running marker.py
+  -> open terminal
+  -> code
+  -> click run command at VSCode
+
+running flow(before make launch file and bach file)
+  -> roscore
+  -> rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=57600
+  -> roslaunch rplidar_ros view_rplidar.launch
+  -> rosrun pub_value pub_value.py
+  -> rosrun pub_value pub_package.py
+  #additional
+      -> rostopic echo /package
+      -> rostopic echo /driving
+
+robot motor stop command
+  -> rostopic pub driving std_msgs/String error --once
+  or
+  -> rostopic pub driving std_msgs/String motor_stop --once
+
+cartographer launch
+  -> roslaunch gbot_core gbot.launch
+  -> roslaunch gbot_core visualization.launch
+
+error report
+  1. python3 matplotlib install error
+    -> sudo apt-get install python3-matplotlib
+  2. python input error name is not defined
+    -> please use raw_input() instead of input() at python2.x
+  3. opencv-python install error
+    -> sudo apt -y install python-opencv
+
+reference
+  1. JetPack 4.2.2
+    -> https://developer.nvidia.com/jetpack-422-archive
+  2. JetsonHacksNano Github Repositories
+    -> https://github.com/JetsonHacksNano?tab=repositories
+  3. 

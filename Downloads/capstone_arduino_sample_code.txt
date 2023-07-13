@@ -1,0 +1,208 @@
+int Dir1Pin_A = 24;  // 제어신호 1핀(방향) -> 우리가 사용하고 있는 모터드라이버는 2개의 핀으로 하나의 모터방향을 제어함.
+int Dir2Pin_A = 22;  // 제어신호 2핀(방향)
+int speedPin_A = 3;   // PWM제어를 위한 핀(속도제어)
+
+int Dir1Pin_B = 28;
+int Dir2Pin_B = 26;
+int speedPin_B = 2;
+
+int Dir1Pin_C = 32;
+int Dir2Pin_C = 30;
+int speedPin_C = 5;
+
+int Dir1Pin_D = 36;
+int Dir2Pin_D = 34;
+int speedPin_D = 4;
+
+int Dir1Pin_E = 40;
+int Dir2Pin_E = 38;
+int speedPin_E = 6;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(Dir1Pin_A, OUTPUT);
+  pinMode(Dir2Pin_A, OUTPUT);
+  pinMode(speedPin_A, OUTPUT);
+
+    pinMode(Dir1Pin_B, OUTPUT);
+  pinMode(Dir2Pin_B, OUTPUT);
+  pinMode(speedPin_B, OUTPUT);
+
+    pinMode(Dir1Pin_C, OUTPUT);
+  pinMode(Dir2Pin_C, OUTPUT);
+  pinMode(speedPin_C, OUTPUT);
+
+    pinMode(Dir1Pin_D, OUTPUT);
+  pinMode(Dir2Pin_D, OUTPUT);
+  pinMode(speedPin_D, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+/*
+digitalWrite(Dir1Pin_A, HIGH);
+digitalWrite(Dir2Pin_A, LOW);
+analogWrite(speedPin_A, 255);//앞 HIGH LOW
+
+
+digitalWrite(Dir1Pin_B, HIGH);
+digitalWrite(Dir2Pin_B, LOW);
+analogWrite(speedPin_B, 255);//뒤 HIGH LOW
+
+
+digitalWrite(Dir1Pin_C, HIGH);
+digitalWrite(Dir2Pin_C, LOW);
+analogWrite(speedPin_C, 255);//앞 HIGH LOW
+
+
+digitalWrite(Dir1Pin_D, HIGH);
+digitalWrite(Dir2Pin_D, LOW);
+analogWrite(speedPin_D, 255);//뒤 HIGH LOW
+delay(1000);
+*/
+
+digitalWrite(Dir1Pin_A, HIGH);
+digitalWrite(Dir2Pin_A, LOW);
+analogWrite(speedPin_A, 255);
+
+
+digitalWrite(Dir1Pin_B, LOW);
+digitalWrite(Dir2Pin_B, HIGH);
+analogWrite(speedPin_B, 255);
+
+
+digitalWrite(Dir1Pin_C, HIGH);
+digitalWrite(Dir2Pin_C, LOW);
+analogWrite(speedPin_C, 255);
+
+
+digitalWrite(Dir1Pin_D, LOW);
+digitalWrite(Dir2Pin_D, HIGH);
+analogWrite(speedPin_D, 255);
+
+digitalWrite(Dir1Pin_E, LOW);
+digitalWrite(Dir2Pin_E, HIGH);
+analogWrite(speedPin_E, 0);
+delay(3000);//전진
+
+digitalWrite(Dir1Pin_A, LOW);
+digitalWrite(Dir2Pin_A, HIGH);
+analogWrite(speedPin_A, 255);
+
+
+digitalWrite(Dir1Pin_B, HIGH);
+digitalWrite(Dir2Pin_B, LOW);
+analogWrite(speedPin_B, 255);
+
+
+digitalWrite(Dir1Pin_C, LOW);
+digitalWrite(Dir2Pin_C, HIGH);
+analogWrite(speedPin_C, 255);
+
+
+digitalWrite(Dir1Pin_D, HIGH);
+digitalWrite(Dir2Pin_D, LOW);
+analogWrite(speedPin_D, 255);
+
+digitalWrite(Dir1Pin_E, LOW);
+digitalWrite(Dir2Pin_E, HIGH);
+analogWrite(speedPin_E, 0);
+delay(3000);//후진
+
+digitalWrite(Dir1Pin_A, LOW);
+digitalWrite(Dir2Pin_A, HIGH);
+analogWrite(speedPin_A, 255);
+
+
+digitalWrite(Dir1Pin_B, LOW);
+digitalWrite(Dir2Pin_B, HIGH);
+analogWrite(speedPin_B, 255);
+
+
+digitalWrite(Dir1Pin_C, HIGH);
+digitalWrite(Dir2Pin_C, LOW);
+analogWrite(speedPin_C, 255);
+
+
+digitalWrite(Dir1Pin_D, HIGH);
+digitalWrite(Dir2Pin_D, LOW);
+analogWrite(speedPin_D, 255);
+
+digitalWrite(Dir1Pin_E, LOW);
+digitalWrite(Dir2Pin_E, HIGH);
+analogWrite(speedPin_E, 0);
+delay(3000);//왼쪽
+
+digitalWrite(Dir1Pin_A, HIGH);
+digitalWrite(Dir2Pin_A, LOW);
+analogWrite(speedPin_A, 255);
+
+
+digitalWrite(Dir1Pin_B, HIGH);
+digitalWrite(Dir2Pin_B, LOW);
+analogWrite(speedPin_B, 255);
+
+
+digitalWrite(Dir1Pin_C, LOW);
+digitalWrite(Dir2Pin_C, HIGH);
+analogWrite(speedPin_C, 255);
+
+
+digitalWrite(Dir1Pin_D, LOW);
+digitalWrite(Dir2Pin_D, HIGH);
+analogWrite(speedPin_D, 255);
+
+digitalWrite(Dir1Pin_E, LOW);
+digitalWrite(Dir2Pin_E, HIGH);
+analogWrite(speedPin_E, 0);
+delay(3000);//오른쪽
+
+
+digitalWrite(Dir1Pin_A, HIGH);
+digitalWrite(Dir2Pin_A, LOW);
+analogWrite(speedPin_A, 0);
+
+
+digitalWrite(Dir1Pin_B, HIGH);
+digitalWrite(Dir2Pin_B, LOW);
+analogWrite(speedPin_B, 0);
+
+
+digitalWrite(Dir1Pin_C, LOW);
+digitalWrite(Dir2Pin_C, HIGH);
+analogWrite(speedPin_C, 0);
+
+
+digitalWrite(Dir1Pin_D, LOW);
+digitalWrite(Dir2Pin_D, HIGH);
+analogWrite(speedPin_D, 0);
+
+digitalWrite(Dir1Pin_E, HIGH);
+digitalWrite(Dir2Pin_E, LOW);
+analogWrite(speedPin_E, 255);
+delay(8000);//바퀴용 모터제어 멈추고 리프팅모터제어(위로 들어올리기)
+
+digitalWrite(Dir1Pin_A, HIGH);
+digitalWrite(Dir2Pin_A, LOW);
+analogWrite(speedPin_A, 0);
+
+
+digitalWrite(Dir1Pin_B, HIGH);
+digitalWrite(Dir2Pin_B, LOW);
+analogWrite(speedPin_B, 0);
+
+
+digitalWrite(Dir1Pin_C, LOW);
+digitalWrite(Dir2Pin_C, HIGH);
+analogWrite(speedPin_C, 0);
+
+
+digitalWrite(Dir1Pin_D, LOW);
+digitalWrite(Dir2Pin_D, HIGH);
+analogWrite(speedPin_D, 0);
+
+digitalWrite(Dir1Pin_E, LOW);
+digitalWrite(Dir2Pin_E, HIGH);
+analogWrite(speedPin_E, 255);
+delay(8000);////바퀴용 모터제어 멈추고 리프팅모터제어(아래로 내리기)
+}

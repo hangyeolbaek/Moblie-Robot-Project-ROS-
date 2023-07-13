@@ -1,0 +1,8 @@
+prefix=/home/capstone/opencv/install
+
+Name: laser_test
+Description: Description of laser_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -llaser_test
+Requires: std_msgs roscpp rospy
